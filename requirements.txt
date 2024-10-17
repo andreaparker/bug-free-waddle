@@ -1,0 +1,12 @@
+flask
+flask-login
+byaldi
+torch
+torchvision
+openai
+docx2pdf
+qwen-vl-utils
+vllm>=0.6.1.post1; sys_platform != 'darwin'
+einops
+markdown
+hf_transfer

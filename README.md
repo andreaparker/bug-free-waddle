@@ -38,11 +38,6 @@ Follow these steps to set up and run the application on your local machine:
    export OPENAI_API_KEY='your_openai_api_key'
    ```
 
-   On Windows Command Prompt:
-
-   ```console
-   set OPENAI_API_KEY=your_openai_api_key
-   ```
 
 5. Run the Application
    ```bash
@@ -54,6 +49,16 @@ Follow these steps to set up and run the application on your local machine:
    ```
    http://localhost:5050/
    ```
+
+## for test
+   
+If you've deployed this up on Lambda Labs or similar: 
+`flask run --host=0.0.0.0 --port=5000`
+
+### for prod
+`pip install gunicorn`
+`gunicorn --bind 0.0.0.0:5000 wsgi:app`
+
 
 ## Usage
 ### Upload and Index Documents

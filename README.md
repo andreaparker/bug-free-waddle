@@ -27,6 +27,8 @@ Follow these steps to set up and run the application on your local machine:
    ```bash
     pip uninstall transformers
     pip install git+https://github.com/huggingface/transformers
+    pip uninstall transformers
+    pip install git+https://github.com/AnswerDotAI/byaldi.git@bump-to-colpali-engine-0.3.x
    ```
 
 4. Set Environment Variables

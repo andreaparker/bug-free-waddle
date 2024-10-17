@@ -104,14 +104,13 @@ def load_model(model_choice):
     elif model_choice == "colpali":
         device = detect_device()
         processor = ColPaliProcessor.from_pretrained(
-            #'vidore/colpali-v1.2',
-            'vidore/colpali',
+            'vidore/colpali-v1.2',
             trust_remote_code=True,
             torch_dtype='bfloat16', # bfloat16 instead of auto as specified in the colpali repo
             device_map="cuda:0"  # or "mps" if Apple Silicon #'auto'
         )
         model = ColPali.from_pretrained(
-            'vidore/colpali',
+            'vidore/colpali-v1.2',
             trust_remote_code=True,
             torch_dtype='torch.bfloat16', #'auto',
             device_map='cuda:0' #'auto'

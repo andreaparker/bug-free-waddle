@@ -40,48 +40,6 @@ def generate_response(images, query, session_id, resized_height=280, resized_wid
             logger.warning("No valid images found for analysis.")
             return "No images could be loaded for analysis."
         
-        # if model_choice == 'qwen':
-        #     from qwen_vl_utils import process_vision_info
-        #     # Load cached model
-        #     model, processor, device = load_model('qwen')
-        #     # Ensure dimensions are multiples of 28
-        #     resized_height = (resized_height // 28) * 28
-        #     resized_width = (resized_width // 28) * 28
-
-        #     image_contents = []
-        #     for image in valid_images:
-        #         image_contents.append({
-        #             "type": "image",
-        #             "image": image,  # Use the full path
-        #             "resized_height": resized_height,
-        #             "resized_width": resized_width
-        #         })
-        #     messages = [
-        #         {
-        #             "role": "user",
-        #             "content": image_contents + [{"type": "text", "text": query}],
-        #         }
-        #     ]
-        #     text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        #     image_inputs, video_inputs = process_vision_info(messages)
-        #     inputs = processor(
-        #         text=[text],
-        #         images=image_inputs,
-        #         videos=video_inputs,
-        #         padding=True,
-        #         return_tensors="pt",
-        #     )
-        #     inputs = inputs.to(device)
-        #     generated_ids = model.generate(**inputs, max_new_tokens=1024)
-        #     generated_ids_trimmed = [
-        #         out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-        #     ]
-        #     output_text = processor.batch_decode(
-        #         generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-        #     )
-        #     logger.info("Response generated using Qwen model.")
-        #     return output_text[0]
-        
         if model_choice == 'gpt4':
         #elif model_choice == 'gpt4':
             api_key = os.getenv("OPENAI_API_KEY")

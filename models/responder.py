@@ -46,7 +46,7 @@ def generate_response(images, query, session_id, resized_height=280, resized_wid
             client = OpenAI(api_key=api_key)
             
             try:
-                query += ". Answer the question using the provided documents. Be sure to include the relevant section names and numbers, page numbers, and any parenthetical references found in the text that you cite from the document. If the answer is not found in these page simply say that you cannot find the answer in the documents provided."
+                query += ". Answer the question using the provided documents. Be sure to include the relevant section names and numbers, page numbers, and any parenthetical references found in the text that you cite from the document."
 
                 content = [{"type": "text", "text": query}]
                 print(query)
